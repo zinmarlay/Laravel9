@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TestSeeder::class,
             UserSeeder::class,
+            AreaSeeder::class, // AreaSeederを先に投入
+            ShopSeeder::class,
+            RouteSeeder::class, // 親から
+            RouteShopSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
         \App\Models\ContactForm::factory(100)->create();

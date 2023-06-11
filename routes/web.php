@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::prefix('contacts')
     Route::post('/{id}/destroy', 'destroy')->name('destroy');
 });
 
+Route::get('shops', [ ShopController::class,'index']);
 
 Route::get('/', function () {
     return view('welcome');
